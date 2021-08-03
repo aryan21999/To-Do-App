@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Log-In</Sign-Up></title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="../public/stylesheet/login.css">
 </head>
+
+<div class="topnav">
+  <a class="navbar-brand" href="/">ToDo-App</a>
+  <div class="topnav-right">
+  <a href="/views/signup.html"> Sign-Up </a>
+  </div>
+</div>
+
 <body>
 
-<img src="https://www.vitalsmarts.com/crucialskills/files/2018/10/ToDoList_1920x1080.jpg" height="650px" width="100%"><br><br>
-<!-- <div class="bg"></div> -->
-<header>
+<img src="https://www.vitalsmarts.com/crucialskills/files/2018/10/ToDoList_1920x1080.jpg" height="590px" width="100%"><br><br>
+
 <button class="open-button" onclick="openForm()">Login-Form</button>
 <div class="form-popup" id="myForm">
   <form action="/action_page.php" class="form-container">
     <h1>Login</h1>
 
-    <label for="email"><b>Email</b></label>00%
+    <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" required>
 
     <label for="psw"><b>Password</b></label>
@@ -25,6 +33,8 @@
   </form>
 </div>
 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 <script>
 function openForm() {
   document.getElementById("myForm").style.display = "block";
@@ -34,6 +44,5 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 </script>
-</header>
 </body>
 </html>
