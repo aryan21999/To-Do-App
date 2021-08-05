@@ -71,10 +71,16 @@ li a:hover:not(.active) {
     border-radius: 5px;
     cursor: pointer;
 }
-.Pending .Completed{
-    margin: 5px 0;
-    padding: 20px;
+.Pending {
+    margin: 0px 0;
+    padding: 8px;
 }
+
+.Completed{
+    margin: 5px 0;
+    padding: 18px;
+}
+
 h3{
     font-size: 28px;
     text-transform: uppercase;
