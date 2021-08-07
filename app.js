@@ -9,6 +9,15 @@ const jwt = require('jsonwebtoken');
 
 const app = express();
 
+app.use(express.static(__dirname + '././public'));
+
+
+app.get('/', function (req, res, next) {
+  res.sendFile(path.join(__dirname+ '/views/signin.html'))
+})
+
+app.use(express.static(__dirname))
+
 app.use(express.json())
 app.use(taskRouter)
 app.use(userRouter)
