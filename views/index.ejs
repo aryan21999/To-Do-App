@@ -10,20 +10,21 @@
     <title>To-Do App</title>
 </head>
 
-    <ul class="nav">
-        <li style="float:left"><a href="/">ToDo-App</a></li>
-        <button onclick="logOut()" action="logOut" class="btn btn-success" style="float:right" type="submit" form="nameform" value="Submit"> Log-Out </button> 
-    </ul>
+<ul class="nav">
+    <li style="float:left"><a href="/">ToDo-App</a></li>
+    <button onclick="logOut()" action="logOut" class="btn btn-success" style="float:right" type="submit" form="nameform"
+        value="Submit"> Log-Out </button>
+</ul>
 
-    <body>
-        <div class="container">
-            <div class="addTask">
-                <input type="text" placeholder="What will you do today?" id="description">
-                <button onclick="addToDo()" action="addToDo" class="add-button" type="submit"
-                    form="nameform" value="Submit">Add</button>
-            </div>
+<body>
+    <div class="container">
+        <div class="addTask">
+            <input type="text" placeholder="What will you do today?" id="description">
+            <button onclick="addToDo()" action="addToDo" class="add-button" type="submit" form="nameform"
+                value="Submit">Add</button>
+        </div>
 
-            <!-- <div class="container">
+        <!-- <div class="container">
                 <ol class="Pending">
                     <h3>Pending</h3>
                     <li>
@@ -43,11 +44,22 @@
             </ol>
 
         </div> -->
-        <h2 style="margin:8px">Todo List</h2>
         <table id=list></table>
+        <p id="demo"></p>
+        <script>
+            function updateTodo() {
+                var txt;
+                if (confirm("Press a button!")) {
+                    txt = "You pressed OK!";
+                } else {
+                    txt = "You pressed Cancel!";
+                }
+                document.getElementById("demo").innerHTML = txt;
+            }
+        </script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
         <script src="../javascript/index.js"></script>
-    </body>
+</body>
 
 </html>

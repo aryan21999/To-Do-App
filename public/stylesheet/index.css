@@ -37,23 +37,26 @@ ul {
   table {
     border-collapse: collapse;
     width: 100%;
-    border: 1px solid #ddd;
-  }
-
-  .th {
-    background-color: #4287f5;
-    color: white;
-    text-align: left;
-    padding: 16px;
-  }
-
-  td {
-    width: 150px;
-    text-align: left;
-    border: 1px solid black;
-    padding: 10px;
   }
   
+  th {
+      text-align: center;
+      background-color: #04AA6D;
+      color: white;
+      width: 800px;
+      padding: 10px;
+  }
+
+ td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid rgb(27, 26, 26);
+  }
+  
+  td button {
+      float: right;
+      padding: 6px;
+  }
   
 li a:hover:not(.active) {
     background-color: rgb(97, 94, 94);

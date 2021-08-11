@@ -10,23 +10,24 @@ axios.get('/list', {
 })
     .then(function (response) {
         var list = document.getElementById('list')
-        list = '<tr><th>description</th><th>Status</th></tr>'
+        list = '<tr><th>Tasks</th></tr>'
         for (i = 0; i < response.data.length; i++) {
             id = response.data[i]._id
             list += '<tr>'
             list += '<td>' + response.data[i].description + '</td>'
-            list += '<td>' + response.data[i].completed + '</td>'
-            list += '<td>' + '<button onclick=deleteToDo("' + id + '") action="none" type="submit" value="Delete">Delete Task</button>'
-            list += '<td>' + '<button onclick=updateToDo("' + id + '") action="none" type="submit" value="Update">Update task</button>'
+            list += '<td>' + '<button class="fa fa-edit" onclick=updateToDo("' + id + '") action="none" type="submit" value="Update"></button>'
+            list += '<td>' + '<button class="far fa-trash-alt" onclick=deleteToDo("' + id + '") action="none" type="submit" value="Delete"></button>'
             list += '</tr>'
         }
         document.getElementById('list').innerHTML = list
-        let form = document.getElementById('updateTask');
+        let form = document.getElementById('updateToDo');
     })
     .catch(function (error) {
         if (error.response)
             console.log(localStorage.token)
-        console.log(error.response.data);
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
     });
 
 function addToDo() {
