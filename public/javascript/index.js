@@ -17,7 +17,7 @@ axios.get('/list', {
             list += '<td>' + response.data[i].description + '</td>'
             list += '<td>' + response.data[i].completed + '</td>'
             list += '<td>' + '<button onclick=deleteToDo("' + id + '") action="none" type="submit" value="Delete">Delete Task</button>'
-            list += '<td>' + '<button onclick=updateToDo("' + id + '") action="none" type="submit" value="Update">Update</button>'
+            list += '<td>' + '<button onclick=updateToDo("' + id + '") action="none" type="submit" value="Update">Update task</button>'
             list += '</tr>'
         }
         document.getElementById('list').innerHTML = list
@@ -45,7 +45,7 @@ function addToDo() {
         .then(function (response) {
             console.log(response)
             console.log(response.data)
-            console.log({ message: "Task Created" })
+            location.reload()
         })
         .catch(function (error) {
             console.log(error);
@@ -53,11 +53,8 @@ function addToDo() {
 }
 
 function updateToDo(id) {
-    console.log(id)
     const description = document.getElementById("description").value
     const completed = false
-    console.log(description)
-    console.log(completed)
     axios.patch("/read/"+ id + "", {
         description: description,
         completed: completed
