@@ -10,7 +10,7 @@ function signUp() {
     .then (function (response) {
         console.log(response)
         console.log(response.data)
-        location.replace('/views/signin.html')
+        location.replace('/')
     })
     .catch(function (error) {
         console.log({ error: 'Invalid Credential' });

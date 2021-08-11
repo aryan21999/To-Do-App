@@ -8,7 +8,8 @@
 
 <nav class="navbar navbar-dark bg-dark">
   <a class="navbar-brand" href="/">ToDo-App</a>
-  <a href=/views/signup.html> Sign-Up </a>
+  <button onclick="signUp()" action="signUp" class="btn btn-success" type="submit" form="nameform" value="Submit">
+    Sign-Up </button>
 </nav>
 
 <body>
@@ -35,15 +36,19 @@
               required maxlength="30">
             <span class="addBtn"></span>
           </div><br>
-          <button onclick="logIn()" action="logIn" type="submit" form="nameform" value="Submit"
-            style="background-color:#fff; height:40px; margin-top: 5%">Log In</button>
+          <button onclick="logIn()" action="logIn" class="btn btn-primary" type="submit" form="nameform" value="Submit" style="width:100%;">LogIn</button>
         </form>
       </div>
     </div><br>
   </div>
+  <script>
+    function signUp() {
+      location.replace("http://localhost:4000/signup")
+    }
+  </script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-  <script src="/public/javascript/signin.js"></script>
+  <script src="../javascript/signin.js"></script>
 </body>
 
 </html>

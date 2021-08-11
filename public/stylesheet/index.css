@@ -22,6 +22,9 @@ ul {
     background-color: rgb(3, 3, 3);
   }
    
+  ul button {
+    padding: 15px;
+  }
   
   li a {
     display: block;
@@ -30,6 +33,27 @@ ul {
     padding: 5px 0px;
     text-decoration: none;
   } 
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+
+  .th {
+    background-color: #4287f5;
+    color: white;
+    text-align: left;
+    padding: 16px;
+  }
+
+  td {
+    width: 150px;
+    text-align: left;
+    border: 1px solid black;
+    padding: 10px;
+  }
+  
   
 li a:hover:not(.active) {
     background-color: rgb(97, 94, 94);

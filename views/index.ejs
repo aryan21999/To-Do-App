@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../stylesheet/index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <title>To-Do App</title>
+</head>
+
+    <ul class="nav">
+        <li style="float:left"><a href="/">ToDo-App</a></li>
+        <button onclick="logOut()" action="logOut" class="btn btn-success" style="float:right" type="submit" form="nameform" value="Submit"> Log-Out </button> 
+    </ul>
+
+    <body>
+        <div class="container">
+            <div class="addTask">
+                <input type="text" placeholder="What will you do today?" id="description">
+                <button onclick="addToDo()" action="addToDo" class="add-button" type="submit"
+                    form="nameform" value="Submit">Add</button>
+            </div>
+
+            <!-- <div class="container">
+                <ol class="Pending">
+                    <h3>Pending</h3>
+                    <li>
+                        <button><i class='far fa-edit'></i> </button>
+                        <button><i class="far fa-trash-alt"></i></button>
+                        <button><i class="checkbox" type="checkbox"></i></button>
+                    </li>
+                </ol>
+            </div>
+
+            <ol class="Completed">
+                <h3>Completed</h3>
+                <li>
+                    <button><i class="far fa-trash-alt"></i></button>
+                    <button><i class='far fa-edit'></i> </button>
+                </li>
+            </ol>
+
+        </div> -->
+        <h2 style="margin:8px">Todo List</h2>
+        <table id=list></table>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+        <script src="../javascript/index.js"></script>
+    </body>
+
+</html>

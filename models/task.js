@@ -11,13 +11,13 @@ const taskSchema = new mongoose.Schema({
         default: false
     },
     owner: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.String,
         required: true,
         ref: 'User'
     }
-}, {
-    timestamps: true
-})
+ })
+//     timestamps: true
+// })
 
 const Task = mongoose.model('Task', taskSchema)
 

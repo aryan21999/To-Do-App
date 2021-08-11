@@ -8,7 +8,7 @@ function logIn() {
         .then(function (response) {
             localStorage.setItem('token', response.data.token)
             console.log(response.data)
-            location.replace('/views/index.html')
+            location.replace('http://localhost:4000/index')
         })
         .catch(function (error) {
             console.log({ error: 'Invalid email or password'});
