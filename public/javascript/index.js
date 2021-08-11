@@ -19,6 +19,11 @@ axios.get('/list', {
             list += '<td>' + '<button class="far fa-trash-alt" onclick=deleteToDo("' + id + '") action="none" type="submit" value="Delete"></button>'
             list += '</tr>'
         }
+        $('#dialog').hide();
+        $('#target').click(function updateToDo() {
+          $('#dialog').show();
+          $('#dialog').dialog();
+        });
         document.getElementById('list').innerHTML = list
         let form = document.getElementById('updateToDo');
     })

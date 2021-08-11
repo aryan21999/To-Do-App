@@ -24,39 +24,23 @@
                 value="Submit">Add</button>
         </div>
 
-        <!-- <div class="container">
-                <ol class="Pending">
-                    <h3>Pending</h3>
-                    <li>
-                        <button><i class='far fa-edit'></i> </button>
-                        <button><i class="far fa-trash-alt"></i></button>
-                        <button><i class="checkbox" type="checkbox"></i></button>
-                    </li>
-                </ol>
-            </div>
-
-            <ol class="Completed">
-                <h3>Completed</h3>
-                <li>
-                    <button><i class="far fa-trash-alt"></i></button>
-                    <button><i class='far fa-edit'></i> </button>
-                </li>
-            </ol>
-
-        </div> -->
         <table id=list></table>
-        <p id="demo"></p>
-        <script>
-            function updateTodo() {
-                var txt;
-                if (confirm("Press a button!")) {
-                    txt = "You pressed OK!";
-                } else {
-                    txt = "You pressed Cancel!";
-                }
-                document.getElementById("demo").innerHTML = txt;
-            }
-        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet" />
+
+        <div id="dialog" title="Basic dialog">
+            <select>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+        </div>
+
+        <input type="button" id="target" value="click" />
+
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
         <script src="../javascript/index.js"></script>
