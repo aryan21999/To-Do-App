@@ -16,8 +16,8 @@ axios.get('/list', {
             list += '<tr>'
             list += '<td>' + response.data[i].description + '</td>'
             list += '<td>' + response.data[i].completed + '</td>'
-            list += '<td>' + '<button onclick=deleteTask class="far fa-trash-alt"("' + id + '") action="none" type="submit" value="Delete">Delete Task</button>'
-            list += '<td>' + '<button onclick=editTask class="fa fa-edit";("' + id + '") action="none" type="submit" value="edit">Update Task</button>'
+            list += '<td>' + '<button onclick=deleteToDo("' + id + '") action="none" type="submit" value="Delete">Delete Task</button>'
+            list += '<td>' + '<button onclick=updateToDo("' + id + '") action="none" type="submit" value="Update">Update</button>'
             list += '</tr>'
         }
         document.getElementById('list').innerHTML = list
@@ -31,7 +31,6 @@ axios.get('/list', {
 
 function addToDo() {
     const description = document.getElementById('description').value;
-    console.log(description)
     const completed = false;
     console.log(localStorage.getItem("token"))
     console.log(`Bearer , ${localStorage.getItem("token")}`)
@@ -53,9 +52,31 @@ function addToDo() {
         })
 }
 
-function deleteContact(id) {
+function updateToDo(id) {
     console.log(id)
-    axios.delete("/delete/"+ id, {
+    const description = document.getElementById("description").value
+    const completed = false
+    console.log(description)
+    console.log(completed)
+    axios.patch("/read/"+ id + "", {
+        description: description,
+        completed: completed
+    },{
+    headers: {
+      Authorization : ('Bearer ', localStorage.getItem("token"))
+    }})
+    .then(function (response) {
+      console.log(response);
+      console.log(response.data)
+      location.reload()
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+function deleteToDo(id) {
+    axios.delete("/read/"+ id + "/delete", {
       headers: {
         Authorization: (`Bearer ${localStorage.getItem("token")}`)
     },
