@@ -119,10 +119,6 @@ ul {
   animation-duration: 0.4s
 }
 
-/* Add Animation */
-
-
-/* The Close Button */
 .close {
   color: white;
   float: right;
@@ -145,7 +141,12 @@ ul {
 
 .modal-body {
   padding: 10px 20px;
-  float:center;
+text-align: center;
+padding: 10px;
+border: none;
+outline: none;
+border-radius: 5px;
+cursor: pointer;
 }
 
 
