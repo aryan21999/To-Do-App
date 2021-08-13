@@ -20,7 +20,7 @@ axios.get('/list', {
     console.log(id)
     list_pending += `<li id="${id}">${response.data[i].description}`
     list_pending += `<form>
-                  <button><i class="fa fa-check"></i></button>
+                  <button type="checkbox" ><i class="fa fa-check"></i></button>
                   <button onclick=deleteToDo("${id}") action="none" type="submit" value="Delete"><i class="far fa-trash-alt"></i></button>
                   <button onclick=updateToDo("${id}") action="none" type="submit" value="Update"><i class="fa fa-edit"></i></button>
             </form></li>`
@@ -36,7 +36,6 @@ axios.get('/list', {
     list_completed += `<form>
                   <button><i class="fa fa-check"></i></button>
                   <button onclick=deleteToDo("${id}") action="none" type="submit" value="Delete"><i class="far fa-trash-alt"></i></button>
-                  <button onclick=updateToDo("${id}") action="none" type="submit" value="Update"><i class="fa fa-edit"></i></button>
             </form></li>`
     }
   }
