@@ -39,36 +39,23 @@ ul {
     width: 100%;
   }
   
-  th {
+  h3 {
       text-align: center;
-      background-color: #04AA6D;
-      color: white;
+      color: rgb(0, 0, 0);
       width: 800px;
       padding: 10px;
   }
 
- td {
+ li {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid rgb(27, 26, 26);
   }
   
-  td button {
-      float: right;
-      padding: 6px;
-  }
+ li form {
+  float: right;
+}
   
-li a:hover:not(.active) {
-    background-color: rgb(97, 94, 94);
-  }
-  
-  .active {
-    color: black;
-    background-color: #fff;
-    margin-right: -16px;
-    padding: 4px;
-  }
-
 .container{
     position: relative;
     max-width: 800px;
@@ -99,16 +86,6 @@ li a:hover:not(.active) {
     border: none;
     outline: none;
     border-radius: 5px;
-    cursor: pointer;
-}
-
-li {
-    float: right;
-    padding: 5px;
-    font-size: 25px;
-    margin-right: 15px;
-    border: none;
-    outline: none;
     cursor: pointer;
 }
 
