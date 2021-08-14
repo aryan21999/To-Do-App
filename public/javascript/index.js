@@ -23,10 +23,12 @@ axios.get('/list', {
     }
     for (i = 0; i < response.data.length; i++) {
       if (response.data[i].completed == true) {
+        var todo = response.data[i].description
         id = response.data[i]._id
         list_completed += `<li id="${id}">${response.data[i].description}`
         list_completed += `<form>
                   <button><i class="fa fa-check"></i></button>
+                  <button onclick=modal(${i},"${id}","${todo}") type="button" id="${i}" class="fa fa-edit"/>
                   <button onclick=deleteToDo("${id}") action="none" type="submit" value="Delete"><i class="far fa-trash-alt"></i></button>
             </form></li>`
       }
@@ -48,22 +50,17 @@ function modal(i, id, todo) {
     document.getElementById('modal_button').setAttribute('onclick',`updateToDo("${id}")`)
 
   
-    // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
   
-    // When the user clicks the button, open the modal 
-    // window.onload = function(){
+
     btn.onclick = function () {
       modal.style.display = "block";
     }
-    // }
   
-    // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
       modal.style.display = "none";
     }
   
-    // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
       if (event.target == modal) {
         modal.style.display = "none";
