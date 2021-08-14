@@ -46,6 +46,7 @@ function modal(i, id, todo) {
     var btn = document.getElementById(i);
     document.getElementById('modals').value = todo
     document.getElementById('modal_button').setAttribute('onclick',`updateToDo("${id}")`)
+
   
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
@@ -85,8 +86,7 @@ function addToDo() {
     .then(function (response) {
       console.log(response)
       console.log(response.data)
-      // location.reload()
-      console.log(id)
+      location.reload()
     })
     .catch(function (error) {
       console.log(error);
@@ -95,9 +95,9 @@ function addToDo() {
 
 function updateToDo(id) {
   console.log(id)
-  const description = document.getElementById("description").value
+  const description = document.getElementById("modals").value
   const completed = false
-  axios.patch("/read/" + id + "", {
+  axios.patch("/read/" + id , {
     description: description,
     completed: completed
   }, {
