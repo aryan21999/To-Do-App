@@ -1,10 +1,11 @@
 const mongoose = require('mongoose')
+const dotenv = require('dotenv')
+dotenv.config()
 
-mongoose.connect('mongodb+srv://Aryan:09876Arya@cluster0.h0l2c.mongodb.net/ToDo?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true
+mongoose.set("useFindAndModify", false)
+mongoose.set("useUnifiedTopology", true)
+mongoose.set("useCreateIndex", true)
+mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
 })
 
 mongoose.connection.on("error", (err) => {

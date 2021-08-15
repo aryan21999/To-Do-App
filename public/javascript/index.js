@@ -15,10 +15,10 @@ axios.get('/list', {
         id = response.data[i]._id
         list_pending += `<li id="${id}">${response.data[i].description}`
         list_pending += `<form>
-        <button><input type="checkbox"/></button>
-        <button onclick=modal(${i},"${id}","${todo}") type="button" id="${i}" class="fa fa-edit"/>
-                  <button onclick=deleteToDo("${id}") action="none" type="submit" value="Delete"><i class="far fa-trash-alt"></i></button>
-            </form></li>`
+                <button onclick=checkbox("${id}","${true}")><input type="checkbox"></button>
+                <button onclick=modal(${i},"${id}","${todo}") type="button" id="${i}" class="fa fa-edit"/>
+                <button onclick=deleteToDo("${id}") action="none" type="submit" value="Delete"><i class="far fa-trash-alt"></i></button>
+        </form></li>`
       }
     }
     for (i = 0; i < response.data.length; i++) {
@@ -27,10 +27,10 @@ axios.get('/list', {
         id = response.data[i]._id
         list_completed += `<li id="${id}">${response.data[i].description}`
         list_completed += `<form>
-                  <button><input type="checkbox"/></button>
-                  <button onclick=modal(${i},"${id}","${todo}") type="button" id="${i}" class="fa fa-edit"/>
-                  <button onclick=deleteToDo("${id}") action="none" type="submit" value="Delete"><i class="far fa-trash-alt"></i></button>
-            </form></li>`
+                <button onclick=checkbox("${id}","${false}")><input checked="checked" type="checkbox"></button>
+                <button onclick=modal(${i},"${id}","${todo}") type="button" id="${i}" class="fa fa-edit"/>
+                <button onclick=deleteToDo("${id}") action="none" type="submit" value="Delete"><i class="far fa-trash-alt"></i></button>
+        </form></li>`
       }
     }
     document.getElementById('pending').innerHTML = list_pending
@@ -68,6 +68,23 @@ function modal(i, id, todo) {
   }
 }
 
+function checkbox(id, status) {
+  axios.patch("/read/" + id, {
+    completed: status
+  }, {
+    headers: {
+      Authorization: (`Bearer ${localStorage.getItem("token")}`)
+    }
+  })
+    .then(function (response) {
+      console.log(response);
+      console.log(response.data)
+      location.reload()
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
 
 function addToDo() {
   const description = document.getElementById('description').value;
@@ -91,7 +108,6 @@ function addToDo() {
 }
 
 function updateToDo(id) {
-  console.log(id)
   const description = document.getElementById("modals").value
   const completed = false
   axios.patch("/read/" + id, {

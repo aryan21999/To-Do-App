@@ -56,13 +56,6 @@ router.patch('/read/:id', auth, async (req, res) => {
 
     try {
         const task = await Task.findOne({ _id: req.params.id, owner: req.user.email})
-        // if(task.owner == req.user.email){
-        //     updates.forEach((update) => task[update] = req.body[update])
-        //     await task.save()
-        // }
-        // else if(task.owner != req.user.email){
-        //     return res.status(400).send(e)
-        // }
         if (!task) {
             return res.status(404).send()
         }

@@ -56,10 +56,10 @@ jwt.verify(token, 'thisismynewproject', function(err, token) {
   })
 
 
-const port = process.env.port || 4000
+// const port = process.env.port || 4000
 
-app.listen(port, () => {
-    console.log(`Server is running on ${port}`)
+app.listen(4000, () => {
+    console.log(`Server is running on`)
 })
 
 module.exports = app
