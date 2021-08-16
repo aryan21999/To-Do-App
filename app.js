@@ -8,6 +8,8 @@ const jwt = require('jsonwebtoken');
 
 
 const app = express();
+const port = process.env.Port || 3000
+
 
 app.use(express.static(__dirname + '././public'));
 const publicDirectoryPath = path.join(__dirname, '/views/')
@@ -55,8 +57,6 @@ var token = jwt.sign({ _id:  '610ce2d8981d3065240daea8' }, 'thisismynewproject',
 jwt.verify(token, 'thisismynewproject', function(err, token) {
   })
 
-
-const port = process.env.Port || 3000
 
 app.listen(port, () => {
     console.log('Server is running on ' + port)
