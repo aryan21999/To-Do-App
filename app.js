@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 
 
 const app = express();
-const port = process.env.Port || 3000
+
 
 
 app.use(express.static(__dirname + '././public'));
@@ -58,8 +58,7 @@ jwt.verify(token, 'thisismynewproject', function(err, token) {
   })
 
 
-app.listen(port, () => {
-    console.log('Server is running on ' + port)
-})
+  app.listen(process.env.PORT || 4000)
+
 
 module.exports = app
